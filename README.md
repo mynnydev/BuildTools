@@ -1,4 +1,4 @@
-# :tools: BuildTools – Handy Building Tools GUI and More (Minecraft 1.21.4 – 1.21.8)
+# 🛠️ BuildTools – Handy Building Tools GUI and More (Minecraft 1.21.4 – 1.21.8)
 
 **BuildTools** currently starts with a convenient GUI that provides useful building tools such as the Debug Stick.  
 Instead of manually giving yourself items, a simple command opens a menu with everything a builder needs.  
