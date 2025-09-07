@@ -1,5 +1,6 @@
 package dev.klayses.buildTools.function.listener;
 
+import dev.klayses.buildTools.function.gui.BuildtoolsGUI;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,8 +19,11 @@ public class BuildtoolsListener implements Listener {
         Player player = (Player) event.getWhoClicked();
         if (event.getView().getTitle().equals(ChatColor.WHITE + "Building Tools")) {
             int slot = event.getRawSlot();
-            if (slot < event.getInventory().getSize()) {
+            if (event.getView().getTopInventory().equals(BuildtoolsGUI.inv)) {
                 event.setCancelled(true);
+            }
+
+
 
                 // Debug
                 if (slot == 10) {
@@ -27,8 +31,17 @@ public class BuildtoolsListener implements Listener {
                     ItemMeta debug_stick_meta = debug_stick.getItemMeta();
                     debug_stick.setItemMeta(debug_stick_meta);
 
-                    player.closeInventory();
                     player.getInventory().addItem(debug_stick);
+                }
+
+                // Spawner
+                if (slot == 11) {
+                    ItemStack spawner = new ItemStack(Material.SPAWNER);
+                    ItemMeta spawner_meta = spawner.getItemMeta();
+                    spawner_meta.lore();
+                    spawner.setItemMeta(spawner_meta);
+
+                    player.getInventory().addItem(spawner);
                 }
 
                 // Light
@@ -37,17 +50,24 @@ public class BuildtoolsListener implements Listener {
                     ItemMeta light_meta = light.getItemMeta();
                     light.setItemMeta(light_meta);
 
-                    player.closeInventory();
                     player.getInventory().addItem(light);
                 }
 
-                // Barrier
+                // DragonEGG
                 if (slot == 14) {
+                    ItemStack dragon_egg = new ItemStack(Material.DRAGON_EGG);
+                    ItemMeta dragon_egg_meta = dragon_egg.getItemMeta();
+                    dragon_egg.setItemMeta(dragon_egg_meta);
+
+                    player.getInventory().addItem(dragon_egg);
+                }
+
+                // Barrier
+                if (slot == 15) {
                     ItemStack barrier = new ItemStack(Material.BARRIER);
                     ItemMeta barrier_meta = barrier.getItemMeta();
                     barrier.setItemMeta(barrier_meta);
 
-                    player.closeInventory();
                     player.getInventory().addItem(barrier);
                 }
 
@@ -57,10 +77,9 @@ public class BuildtoolsListener implements Listener {
                     ItemMeta structure_viod_meta = structure_void.getItemMeta();
                     structure_void.setItemMeta(structure_viod_meta);
 
-                    player.closeInventory();
                     player.getInventory().addItem(structure_void);
                 }
             }
         }
-    }
+
 }

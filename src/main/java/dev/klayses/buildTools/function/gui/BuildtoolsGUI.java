@@ -10,8 +10,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BuildtoolsGUI {
 
+    public static final Inventory inv = Bukkit.createInventory(null, 3*9, ChatColor.WHITE + "Building Tools");
+
     public static void openGUI_BT(Player player) {
-        Inventory inv = Bukkit.createInventory(null, 3*9, ChatColor.WHITE + "Building Tools");
 
         // Placeholder
         ItemStack glass = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
@@ -32,17 +33,30 @@ public class BuildtoolsGUI {
         debug_stick.setItemMeta(debug_stick_meta);
         inv.setItem(10, debug_stick);
 
+        // Spawner
+        ItemStack spawner = new ItemStack(Material.SPAWNER);
+        ItemMeta spawner_meta = spawner.getItemMeta();
+        spawner_meta.lore();
+        spawner.setItemMeta(spawner_meta);
+        inv.setItem(11, spawner);
+
         // Light
         ItemStack light = new ItemStack(Material.LIGHT);
         ItemMeta light_meta = light.getItemMeta();
         light.setItemMeta(light_meta);
         inv.setItem(12, light);
 
+        // DragonEgg
+        ItemStack dragon_egg = new ItemStack(Material.DRAGON_EGG);
+        ItemMeta dragon_egg_meta = dragon_egg.getItemMeta();
+        dragon_egg.setItemMeta(dragon_egg_meta);
+        inv.setItem(14, dragon_egg);
+
         // Barrier
         ItemStack barrier = new ItemStack(Material.BARRIER);
         ItemMeta barrier_meta = barrier.getItemMeta();
         barrier.setItemMeta(barrier_meta);
-        inv.setItem(14, barrier);
+        inv.setItem(15, barrier);
 
         // Structure Void
         ItemStack structure_void = new ItemStack(Material.STRUCTURE_VOID);
