@@ -22,64 +22,60 @@ public class BuildtoolsListener implements Listener {
             if (event.getView().getTopInventory().equals(BuildtoolsGUI.inv)) {
                 event.setCancelled(true);
             }
+            // Debug
+            if (slot == 10) {
+                ItemStack debug_stick = new ItemStack(Material.DEBUG_STICK);
+                ItemMeta debug_stick_meta = debug_stick.getItemMeta();
+                debug_stick.setItemMeta(debug_stick_meta);
 
+                player.getInventory().addItem(debug_stick);
+            }
 
+            // Spawner
+            if (slot == 11) {
+                ItemStack spawner = new ItemStack(Material.SPAWNER);
+                ItemMeta spawner_meta = spawner.getItemMeta();
+                spawner_meta.lore();
+                spawner.setItemMeta(spawner_meta);
 
-                // Debug
-                if (slot == 10) {
-                    ItemStack debug_stick = new ItemStack(Material.DEBUG_STICK);
-                    ItemMeta debug_stick_meta = debug_stick.getItemMeta();
-                    debug_stick.setItemMeta(debug_stick_meta);
+                player.getInventory().addItem(spawner);
+            }
 
-                    player.getInventory().addItem(debug_stick);
-                }
+            // Light
+            if (slot == 12) {
+                ItemStack light = new ItemStack(Material.LIGHT);
+                ItemMeta light_meta = light.getItemMeta();
+                light.setItemMeta(light_meta);
 
-                // Spawner
-                if (slot == 11) {
-                    ItemStack spawner = new ItemStack(Material.SPAWNER);
-                    ItemMeta spawner_meta = spawner.getItemMeta();
-                    spawner_meta.lore();
-                    spawner.setItemMeta(spawner_meta);
+                player.getInventory().addItem(light);
+            }
 
-                    player.getInventory().addItem(spawner);
-                }
+            // DragonEGG
+            if (slot == 14) {
+                ItemStack dragon_egg = new ItemStack(Material.DRAGON_EGG);
+                ItemMeta dragon_egg_meta = dragon_egg.getItemMeta();
+                dragon_egg.setItemMeta(dragon_egg_meta);
 
-                // Light
-                if (slot == 12) {
-                    ItemStack light = new ItemStack(Material.LIGHT);
-                    ItemMeta light_meta = light.getItemMeta();
-                    light.setItemMeta(light_meta);
+                player.getInventory().addItem(dragon_egg);
+            }
 
-                    player.getInventory().addItem(light);
-                }
+            // Barrier
+            if (slot == 15) {
+                ItemStack barrier = new ItemStack(Material.BARRIER);
+                ItemMeta barrier_meta = barrier.getItemMeta();
+                barrier.setItemMeta(barrier_meta);
 
-                // DragonEGG
-                if (slot == 14) {
-                    ItemStack dragon_egg = new ItemStack(Material.DRAGON_EGG);
-                    ItemMeta dragon_egg_meta = dragon_egg.getItemMeta();
-                    dragon_egg.setItemMeta(dragon_egg_meta);
+                player.getInventory().addItem(barrier);
+            }
 
-                    player.getInventory().addItem(dragon_egg);
-                }
+            // Structure Void
+            if (slot == 16) {
+                ItemStack structure_void = new ItemStack(Material.STRUCTURE_VOID);
+                ItemMeta structure_viod_meta = structure_void.getItemMeta();
+                structure_void.setItemMeta(structure_viod_meta);
 
-                // Barrier
-                if (slot == 15) {
-                    ItemStack barrier = new ItemStack(Material.BARRIER);
-                    ItemMeta barrier_meta = barrier.getItemMeta();
-                    barrier.setItemMeta(barrier_meta);
-
-                    player.getInventory().addItem(barrier);
-                }
-
-                // Structure Void
-                if (slot == 16) {
-                    ItemStack structure_void = new ItemStack(Material.STRUCTURE_VOID);
-                    ItemMeta structure_viod_meta = structure_void.getItemMeta();
-                    structure_void.setItemMeta(structure_viod_meta);
-
-                    player.getInventory().addItem(structure_void);
-                }
+                player.getInventory().addItem(structure_void);
             }
         }
-
+    }
 }
