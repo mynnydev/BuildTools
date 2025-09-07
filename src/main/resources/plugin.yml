@@ -9,6 +9,6 @@ website: discord.klayses.dev
 
 commands:
   buildtools:
-    aliases: [bt]
+    aliases: [bt, blocks]
     description: Give building tools.
 
